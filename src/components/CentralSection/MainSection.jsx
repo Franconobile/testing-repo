@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Workers from './Workers';
 
@@ -26,8 +26,14 @@ const DisplayContent = styled.div`
 `;
 
 
-const MainSection = () => {
-  const [workersCount] = useState(0);
+const MainSection = ({  clickCount, setClickCount, workersCount  }) => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setClickCount(prevCount => prevCount + workersCount);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [workersCount, setClickCount]);
 
     return (
       <Main>

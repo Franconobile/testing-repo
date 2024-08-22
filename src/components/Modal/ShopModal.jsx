@@ -108,7 +108,7 @@ const ClosePopupButton = styled.button`
   margin-left: 10px;
 `;
 
-const ShopModal = ({ isOpen, onClose, clickCount, setClickCount }) => {
+const ShopModal = ({ isOpen, onClose, clickCount, setClickCount, workersCount, setWorkersCount }) => {
   const [selectedSection, setSelectedSection] = useState('workers');
   const [showPopup, setShowPopup] = useState(false);
 
@@ -116,6 +116,7 @@ const ShopModal = ({ isOpen, onClose, clickCount, setClickCount }) => {
   const handleBuyWorker = () => {
     if (clickCount >= 100) {
       setClickCount(clickCount - 100);
+      setWorkersCount(prevCount => Math.min(prevCount + 1, 100));
     } else {
       setShowPopup(true);
     }
@@ -154,7 +155,9 @@ const ShopModal = ({ isOpen, onClose, clickCount, setClickCount }) => {
         <ContentArea>
           {selectedSection === 'workers' && (
             <>
-              <WorkerItem onBuy={handleBuyWorker} canBuy={clickCount >= 100}/>
+              <WorkerItem 
+              onBuy={handleBuyWorker} 
+              canBuy={clickCount >= 100}/>
             </>
           )}
           {selectedSection === 'upgrades' && <h3>Upgrades Section (Under Construction)</h3>}

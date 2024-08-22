@@ -28,6 +28,7 @@ function App() {
 
   const [isModalOpen, setModalOpen] = useState(false); //Opciones
   const [isShopModalOpen, setShopModalOpen] = useState(false); //Shop
+  const [workersCount, setWorkersCount] = useState(0);
 
 
   // Guardar el contador en localStorage cada vez que cambia
@@ -64,10 +65,25 @@ function App() {
     <AppContainer>
       <GlobalStyles />
       <Navbar clickCount={clickCount}></Navbar>
-      <MainSection></MainSection>
-      <FooterComponent onClick={handleClick} onOptionsClick={toggleModal} onShopClick={toggleShopModal}></FooterComponent>
+      <MainSection 
+        clickCount={clickCount} 
+        setClickCount={setClickCount} 
+        workersCount={workersCount}>
+      </MainSection>  
+      <FooterComponent 
+        onClick={handleClick} 
+        onOptionsClick={toggleModal} 
+        onShopClick={toggleShopModal}>
+      </FooterComponent>
       <OptsModal isOpen={isModalOpen} onClose={toggleModal} onReset={handleReset} />
-      <ShopModal isOpen={isShopModalOpen} onClose={toggleShopModal} clickCount={clickCount} setClickCount={setClickCount} />
+      <ShopModal 
+        isOpen={isShopModalOpen} 
+        onClose={toggleShopModal} 
+        clickCount={clickCount} 
+        setClickCount={setClickCount} 
+        workersCount={workersCount}
+        setWorkersCount={setWorkersCount}
+      />
     </AppContainer>
 
   );
