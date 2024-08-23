@@ -36,6 +36,9 @@ const CloseButton = styled.button`
   color: white;
   font-size: 20px;
   cursor: pointer;
+
+      &:hover {
+    color: #7F5915;
 `;
 
 const Sidebar = styled.div`
@@ -98,6 +101,20 @@ const Popup = styled.div`
   z-index: 1000;
 `;
 
+const MaxWorkersPopup = styled.div`
+  position: absolute;
+  background-color: #6F541C;  
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);  
+  z-index: 1000;
+`;
+
+
 const ClosePopupButton = styled.button`
   background: #403B29;
   border: none;
@@ -106,17 +123,36 @@ const ClosePopupButton = styled.button`
   font-size: 15px;
   cursor: pointer;
   margin-left: 10px;
+
+      &:hover {
+    color: #7F5915;
+`;
+
+const ClosePopupButtonWorker = styled.button`
+  background: #403B29;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 10px;
+
+      &:hover {
+    color: #7F5915;
 `;
 
 const ShopModal = ({ isOpen, onClose, clickCount, setClickCount, workersCount, setWorkersCount }) => {
   const [selectedSection, setSelectedSection] = useState('workers');
   const [showPopup, setShowPopup] = useState(false);
+  const [showPopupMaxWorker, setShowPopupMaxWorker] = useState(false);
 
 
   const handleBuyWorker = () => {
-    if (clickCount >= 100) {
+    if (clickCount >= 100 && workersCount < 25) {
       setClickCount(clickCount - 100);
-      setWorkersCount(prevCount => Math.min(prevCount + 1, 100));
+      setWorkersCount(prevCount => Math.min(prevCount + 1, 25));
+    } else if (workersCount >= 25) {
+      setShowPopupMaxWorker(true);
     } else {
       setShowPopup(true);
     }
@@ -124,6 +160,7 @@ const ShopModal = ({ isOpen, onClose, clickCount, setClickCount, workersCount, s
 
   const closePopup = () => {
     setShowPopup(false);
+    setShowPopupMaxWorker(false);
   };
 
   if (!isOpen) return null;
@@ -158,6 +195,12 @@ const ShopModal = ({ isOpen, onClose, clickCount, setClickCount, workersCount, s
               <WorkerItem 
               onBuy={handleBuyWorker} 
               canBuy={clickCount >= 100}/>
+              {showPopupMaxWorker && (
+                <MaxWorkersPopup>
+                  <p>Maximum number of workers reached (25)</p>
+                  <ClosePopupButtonWorker onClick={closePopup}>X</ClosePopupButtonWorker>
+                </MaxWorkersPopup>
+              )}
             </>
           )}
           {selectedSection === 'upgrades' && <h3>Upgrades Section (Under Construction)</h3>}

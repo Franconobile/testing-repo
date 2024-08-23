@@ -8,6 +8,7 @@ import MainSection from './components/CentralSection/MainSection';
 import FooterComponent from './components/Footer/Footer';
 import OptsModal from './components/Modal/Options';
 import ShopModal from './components/Modal/ShopModal';
+import Inventory from './components/Modal/InventoryModal';
 
 
 const AppContainer = styled.div`
@@ -28,6 +29,7 @@ function App() {
 
   const [isModalOpen, setModalOpen] = useState(false); //Opciones
   const [isShopModalOpen, setShopModalOpen] = useState(false); //Shop
+  const [isInvModalOpen, setInvModalOpen] = useState(false); //Inventory
   const [workersCount, setWorkersCount] = useState(0);
 
 
@@ -61,6 +63,12 @@ function App() {
     setShopModalOpen(!isShopModalOpen);
   };
 
+  //Modal Inv
+
+  const toggleInvModal = () => {
+    setInvModalOpen(!isInvModalOpen);
+  };
+
   return (
     <AppContainer>
       <GlobalStyles />
@@ -73,7 +81,9 @@ function App() {
       <FooterComponent 
         onClick={handleClick} 
         onOptionsClick={toggleModal} 
-        onShopClick={toggleShopModal}>
+        onShopClick={toggleShopModal}
+        onInvClick={toggleInvModal}
+        >
       </FooterComponent>
       <OptsModal isOpen={isModalOpen} onClose={toggleModal} onReset={handleReset} />
       <ShopModal 
@@ -83,6 +93,10 @@ function App() {
         setClickCount={setClickCount} 
         workersCount={workersCount}
         setWorkersCount={setWorkersCount}
+      />
+      <Inventory
+      isOpen={isInvModalOpen}
+      onClose={toggleInvModal}
       />
     </AppContainer>
 

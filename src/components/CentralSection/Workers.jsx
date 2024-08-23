@@ -34,16 +34,20 @@ const WarningText = styled.p`
 
 
 const Workers = ({ workersCount }) => {
+  const displayedWorkers = Math.min(workersCount, 6);
+  const totalWorkers = Math.min(workersCount, 25);
+
     return (
         <Laburantes>
             <h2>Workers</h2>
             <LaburantesList>
-            {Array.from({ length: workersCount }).map((_, index) => (
-                <LaburantesSlot key={index} />
+            {Array.from({ length: displayedWorkers }).map((_, index) => (
+                  <LaburantesSlot key={index} 
+                />
             ))}
-            {workersCount >= 5 && (
+            {workersCount >= 6 && (
                 <WarningText>
-                    x{workersCount > 100 ? '100+' : workersCount}
+                    x{totalWorkers}
                 </WarningText>
             )}
             </LaburantesList>

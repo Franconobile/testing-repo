@@ -35,6 +35,9 @@ const CloseButton = styled.button`
   color: white;
   font-size: 20px;
   cursor: pointer;
+
+      &:hover {
+    color: #7F5915;
 `;
 
 const ResetButton = styled.button`
