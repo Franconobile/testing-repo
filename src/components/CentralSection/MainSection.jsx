@@ -5,6 +5,7 @@ import Details from './Details';
 import limgravebg from '../../assets/bgs/ER-Limgrave.webp';
 import radagonWebm from '../../assets/player/radagon.webm'; 
 
+import { pullCharacter } from '../../GachaSystem.js';
 
 
 const Main = styled.main`
@@ -162,9 +163,10 @@ const NotEnoughModalBtn = styled.button`
 
 // CONST JSX
 
-const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, setIsWishing, clickCount, setIsWishInProgress  }) => {
+const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, setIsWishing, clickCount, setIsWishInProgress, pityCounter, setPityCounter, setPullHistory }) => {
   const [showModal, setShowModal] = useState(false);
   const [particles, setParticles] = useState([]);
+  const [pulledCharacter, setPulledCharacter] = useState(null);
   const [showNotEnoughRunesModal, setShowNotEnoughRunesModal] = useState(false);
 
   // ---
@@ -179,15 +181,21 @@ const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, 
       const video = document.getElementById('wishVideo');
       video.play();
       video.onended = () => {
+        const character = pullCharacter(pityCounter);
+        setPulledCharacter(character);
         setShowModal(true);
         setIsWishing(false);
-        setIsWishInProgress(false); // Add this line
+        setIsWishInProgress(false);
+        setPullHistory(prev => [...prev, character]);
+        if (character.rarity === 5) {
+          setPityCounter(0);
+        }
       };
     } else if (isWishing === 'not-enough-runes') {
       setShowNotEnoughRunesModal(true);
       setIsWishing(false);
     }
-  }, [isWishing, setIsWishing, setIsWishInProgress]);
+  }, [isWishing, setIsWishing, setIsWishInProgress,  pityCounter, setPityCounter, setPullHistory]);
 
   const closeModal = () => {
     setShowModal(false);
@@ -249,7 +257,7 @@ const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, 
             </NotEnoughModal>
           )}
           {showModal && (
-            <Details onClose={closeModal} />
+            <Details onClose={closeModal} character={pulledCharacter}/>
           )}
         </DisplayContent>
         </DisplayArea>

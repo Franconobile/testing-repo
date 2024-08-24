@@ -10,6 +10,10 @@ import OptsModal from './components/Modal/Options';
 import ShopModal from './components/Modal/ShopModal';
 import Inventory from './components/Modal/InventoryModal';
 
+// JSON
+
+import characters from './data/characters.json';
+
 
 const AppContainer = styled.div`
   display: flex;
@@ -21,6 +25,14 @@ function App() {
   //Sistema de wisheo
   const [isWishing, setIsWishing] = useState(false);
   const [isWishInProgress, setIsWishInProgress] = useState(false);
+
+  //Sistema de PITY
+
+  const [pityCounter, setPityCounter] = useState(0);
+  const [pullHistory, setPullHistory] = useState([]);
+
+
+
   // Inicializa el estado con el valor de localStorage o con 0 si no existe
   const [clickCount, setClickCount] = useState(() => {
     const savedCount = localStorage.getItem('clickCount');
@@ -32,6 +44,7 @@ function App() {
       setClickCount(prevCount => prevCount - 1000);
       setIsWishing(true);
       setIsWishInProgress(true);
+      setPityCounter(prevCounter => prevCounter + 1);
     } else if (!isWishInProgress && clickCount < 1000) {
       setIsWishing('not-enough-runes');
     }
@@ -94,6 +107,7 @@ function App() {
         onWishClick={handleWishClick}
         setIsWishInProgress={setIsWishInProgress}
         showNotEnoughRunesModal={clickCount < 1000 && isWishing === false}
+        setPullHistory={setPullHistory}
         >
       </MainSection>  
       <FooterComponent 

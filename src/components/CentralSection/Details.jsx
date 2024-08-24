@@ -33,6 +33,12 @@ const ChrContent = styled.div`
   font-family: 'Mantinia', sans-serif;
 `;
 
+const CharacterImage = styled.img`
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+`;
+
 const ModalButton = styled.button`
   background-color: #7F5915;
   color: white;
@@ -45,12 +51,15 @@ const ModalButton = styled.button`
 `;
 
 
-const Details = ({onClose}) => {
+const Details = ({onClose, character}) => {
     return (
       <Modal>
         <ModalContent>
             <ChrContent>
-                <p>Here's the character you pulled</p>
+                <h2>{character.name}</h2>
+                <p>Rarity: {character.rarity} ★</p>
+                <CharacterImage src={character.image} alt={character.name}
+                 />
             </ChrContent>
             <ModalButton onClick={onClose}>Omg great!</ModalButton>
         </ModalContent>

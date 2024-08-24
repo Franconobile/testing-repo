@@ -4,7 +4,7 @@
       "name": "Black Knight",
       "type": "character",
       "rarity": 3,
-      "image": "../chrs/black-knight.webp",
+      "image": "assets/chrs/black-knight.webp",
       "desc": "Description 1"
     },
     {
