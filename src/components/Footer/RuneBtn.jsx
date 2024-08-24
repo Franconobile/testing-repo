@@ -3,15 +3,20 @@ import styled from 'styled-components';
 import rune from '../../assets/rune.png';
 import audioClick from '../../assets/sfx/click.ogg';
 
-
-const RuneButton = styled.img`
+const RuneButton = styled.div`
+  position: relative;
   height: auto;
   width: 100%;
   max-width: 120px;
   cursor: pointer;
-  animation: rotate 80s linear infinite;
-  transform-origin: center center;
-  will-change: transform;
+
+  img {
+    width: 100%;
+    height: auto;
+    animation: rotate 80s linear infinite;
+    transform-origin: center center;
+    will-change: transform;
+  }
 
   @keyframes rotate {
     from {
@@ -22,34 +27,24 @@ const RuneButton = styled.img`
     }
   }
 
-  &.shine {
-    position: relative;
-  }
-
-  &.shine::after {
+  &::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 200%; /* Asegúrate de que el brillo sea lo suficientemente grande */
-    height: 200%;
-    background: rgba(255, 255, 255, 0.8); /* Color del brillo */
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 217, 100, 0.8) 0%, rgba(255, 217, 100, 0) 70%);
     border-radius: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
     opacity: 0;
     pointer-events: none;
-    animation: shine 0.3s ease-out;
+    transition: transform 0.7s ease-out, opacity 0.7s ease-out;
   }
 
-  @keyframes shine {
-    0% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(0.5);
-    }
-    100% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(1);
-    }
+  &.shine::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
 `;
 
@@ -61,22 +56,17 @@ const RuneBtn = ({ onClick }) => {
     setShine(true);
     if (onClick) onClick();
     if (audioRef.current) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
-      }
-    setTimeout(() => setShine(false), 300); 
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    }
+    setTimeout(() => setShine(false), 300);
   };
 
   return (
-    <>
-        <RuneButton
-        src={rune}
-        alt="Rune"
-        className={shine ? 'shine' : ''}
-        onClick={handleClick}
-        />
-        <audio ref={audioRef} src={audioClick}/>
-    </>
+    <RuneButton className={shine ? 'shine' : ''} onClick={handleClick}>
+      <img src={rune} alt="Rune" />
+      <audio ref={audioRef} src={audioClick} />
+    </RuneButton>
   );
 };
 

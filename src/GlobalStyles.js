@@ -41,9 +41,18 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  
+    @keyframes fall {
+    0% {
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
 
-`
+`;
 
 
 
