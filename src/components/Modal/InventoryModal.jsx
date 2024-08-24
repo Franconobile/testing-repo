@@ -91,41 +91,42 @@ const Slot = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   padding: 40px;
 `;
 
 const CharacterSlot = styled(Slot)`
   position: relative;
-  width: 120px;
-  height: 120px;
 `;
+
+const CountBadge = styled.div`
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+`;
+
+const CharacterBadge = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 50px;
+`;
+
+
 
 const CharacterImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 `;
-
-const CharacterInfo = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 5px;
-  text-align: center;
-`;
-
-const CharacterCount = styled.div`
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 2px 5px;
-  border-radius: 10px;
-`;
-
 
 
 const PlaceholderText = styled.span`
@@ -141,46 +142,39 @@ const InventoryModal = ({isOpen, onClose, inventory }) => {
 
     if (!isOpen) return null;
 
-    const characterInventory = inventory.filter(item => item.type === 'character');
+    const characters = Object.values(inventory).filter(item => item.type === 'character');
 
     return (
       <InvOverlay>
-      <InvContent>
-        <CloseInv onClick={onClose}>X</CloseInv>
-        <Header>Inventory / {activeTab}</Header>
-        <ButtonContainer>
-          <Button onClick={() => setActiveTab('Character')}>Character</Button>
-          <Button onClick={() => setActiveTab('Weapons')}>Weapons</Button>
-        </ButtonContainer>
-        {activeTab === 'Character' && (
-          <div>
-            {characterInventory.map((item) => {
-              const character = characters.find(c => c.id === item.id);
-              return (
+        <InvContent>
+          <CloseInv onClick={onClose}>X</CloseInv>
+          <Header>Inventory / {activeTab}</Header>
+          <ButtonContainer>
+            <Button onClick={() => setActiveTab('Character')}>Character</Button>
+            <Button onClick={() => setActiveTab('Weapons')}>Weapons</Button>
+          </ButtonContainer>
+          {activeTab === 'Character' && (
+            <CharacterBadge>
+              {characters.map(character => (
                 <CharacterSlot key={character.id}>
                   <CharacterImage src={character.image} alt={character.name} />
-                  <CharacterInfo>
-                    <div>{character.name}</div>
-                    <div>Rarity: {character.rarity}</div>
-                  </CharacterInfo>
-                  {item.count > 1 && (
-                    <CharacterCount>x{item.count}</CharacterCount>
+                  {character.count > 1 && (
+                    <CountBadge>x{character.count}</CountBadge>
                   )}
                 </CharacterSlot>
-              );
-            })}
-          </div>
-        )}
-        {activeTab === 'Weapons' && (
-          <Slot>
-            <PlaceholderText>
-              Weapon<span>1</span>
-            </PlaceholderText>
-          </Slot>
-        )}
-      </InvContent>
-    </InvOverlay>
-        );
-    };
+              ))}
+            </CharacterBadge>
+          )}
+          {activeTab === 'Weapons' && (
+            <Slot>
+              <PlaceholderText>
+                Weapon<span>1</span>
+              </PlaceholderText>
+            </Slot>
+          )}
+        </InvContent>
+      </InvOverlay>
+    );
+  };
 
 export default InventoryModal;

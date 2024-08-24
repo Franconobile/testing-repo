@@ -73,6 +73,7 @@ function App() {
   const handleReset = () => {
     setClickCount(0);
     localStorage.removeItem('clickCount');
+    localStorage.removeItem('inventory');
     setModalOpen(false);
   };
 
@@ -90,20 +91,26 @@ function App() {
 
   //Modal Inv
 
-  const [inventory, setInventory] = useState([]);
+  const [inventory, setInventory] = useState(() => {
+    const savedInventory = localStorage.getItem('inventory');
+    return savedInventory ? JSON.parse(savedInventory) : {};
+  });
+
+  useEffect(() => {
+    localStorage.setItem('inventory', JSON.stringify(inventory));
+  }, [inventory]);
 
   const addToInventory = (character) => {
     setInventory(prevInventory => {
-      const existingItem = prevInventory.find(item => item.id === character.id);
-      if (existingItem) {
-        return prevInventory.map(item => 
-          item.id === character.id ? {...item, count: item.count + 1} : item
-        );
-      } else {
-        return [...prevInventory, {...character, count: 1}];
+      const newInventory = { ...prevInventory };
+      if (character.id in newInventory) {
+        newInventory[character.id].count += 1;
+        console.log(`Incrementing count for ${character.name}. New count:`, newInventory[character.id].count);
       }
+      return newInventory;
     });
   };
+
 
   const toggleInvModal = () => {
     setInvModalOpen(!isInvModalOpen);

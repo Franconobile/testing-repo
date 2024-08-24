@@ -163,7 +163,7 @@ const NotEnoughModalBtn = styled.button`
 
 // CONST JSX
 
-const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, setIsWishing, clickCount, setIsWishInProgress, pityCounter, setPityCounter, setPullHistory }) => {
+const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, setIsWishing, addToInventory , setIsWishInProgress, pityCounter, setPityCounter, setPullHistory }) => {
   const [showModal, setShowModal] = useState(false);
   const [particles, setParticles] = useState([]);
   const [pulledCharacter, setPulledCharacter] = useState(null);
@@ -187,6 +187,7 @@ const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, 
         setIsWishing(false);
         setIsWishInProgress(false);
         setPullHistory(prev => [...prev, character]);
+        addToInventory(character);
         if (character.rarity === 5) {
           setPityCounter(0);
         }
@@ -195,7 +196,7 @@ const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, 
       setShowNotEnoughRunesModal(true);
       setIsWishing(false);
     }
-  }, [isWishing, setIsWishing, setIsWishInProgress,  pityCounter, setPityCounter, setPullHistory]);
+  }, [isWishing, setIsWishing, setIsWishInProgress,  pityCounter, setPityCounter, setPullHistory, addToInventory]);
 
   const closeModal = () => {
     setShowModal(false);
