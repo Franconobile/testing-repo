@@ -3,15 +3,18 @@ import styled from 'styled-components';
 
 const Laburantes = styled.section`
   width: 200px;
-  background-color: #161514;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(40,37,32,1) 100%);
   color: #fff;
-  padding: 20px;
-  
   h2 {
     margin-top: 0;
   }
 `;
 
+const LaburantesHeader = styled.div`
+  background-color: #070605;
+  padding: 5px;
+`;
 
 const LaburantesList = styled.div`
   display: flex;
@@ -23,12 +26,13 @@ const LaburantesList = styled.div`
 const LaburantesSlot = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #ccc; /* Color de fondo para los espacios de trabajadores */
+  margin: 5px;
+  background-color: black;
   border-radius: 5px;
 `;
 
 const WarningText = styled.p`
-  color: red;
+  color: #7F6632;
   font-size: 18px;
 `;
 
@@ -39,7 +43,9 @@ const Workers = ({ workersCount }) => {
 
     return (
         <Laburantes>
+          <LaburantesHeader>
             <h2>Workers</h2>
+          </LaburantesHeader>
             <LaburantesList>
             {Array.from({ length: displayedWorkers }).map((_, index) => (
                   <LaburantesSlot key={index} 

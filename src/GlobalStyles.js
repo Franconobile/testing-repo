@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+
 const GlobalStyles = createGlobalStyle`
     @font-face {
         font-family: 'Mantinia';
@@ -40,6 +41,12 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  
+
 `
+
+
+
+
 
 export default GlobalStyles;

@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import rune from '../../assets/rune.png';
+import RuneBtn from './RuneBtn';
 
 
 const Footer = styled.footer`
+overflow: hidden;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-color: #030303;
   color: #fff;
-  padding: 10px;
+  gap: 20%;
 `;
 
 const InventorySection = styled.div`
@@ -34,15 +35,7 @@ const Clicker = styled.section`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 150px;
   gap: 20px;
-`;
-
-const RuneBtn = styled.img`
-  height: auto;
-  width: 100%;
-  max-width: 120px;
-  cursor: pointer;
 `;
 
 const MultiplierButtons = styled.div`
@@ -61,9 +54,6 @@ const FooterComponent = ({onClick, onOptionsClick, onShopClick, onInvClick }) =>
       </InventorySection>
       <Clicker>
         <RuneBtn
-          src={rune}
-          alt="Rune"
-          id="butonRunas"
           onClick={onClick}
         />
         <MultiplierButtons>
