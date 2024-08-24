@@ -249,7 +249,7 @@ const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, 
             </NotEnoughModal>
           )}
           {showModal && (
-            <Details />
+            <Details onClose={closeModal} />
           )}
         </DisplayContent>
         </DisplayArea>

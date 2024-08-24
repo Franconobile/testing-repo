@@ -24,9 +24,7 @@ const ModalButton = styled.button`
 `;
 
 
-const Details = ({isOpen, onClose}) => {
-    if (!isOpen) return null;
-
+const Details = ({onClose}) => {
     return (
         <Modal>
         <p>Here's the character you pulled</p>
