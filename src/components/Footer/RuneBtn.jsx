@@ -48,7 +48,7 @@ const RuneButton = styled.div`
   }
 `;
 
-const RuneBtn = ({ onClick }) => {
+const RuneBtn = ({ onClick, disabled  }) => {
   const [shine, setShine] = useState(false);
   const audioRef = useRef(null);
 
@@ -63,7 +63,7 @@ const RuneBtn = ({ onClick }) => {
   };
 
   return (
-    <RuneButton className={shine ? 'shine' : ''} onClick={handleClick}>
+    <RuneButton className={shine ? 'shine' : ''} onClick={handleClick} disabled={disabled}>
       <img src={rune} alt="Rune" />
       <audio ref={audioRef} src={audioClick} />
     </RuneButton>

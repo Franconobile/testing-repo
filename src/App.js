@@ -18,7 +18,9 @@ const AppContainer = styled.div`
 `;
 
 function App() {
+  //Sistema de wisheo
   const [isWishing, setIsWishing] = useState(false);
+  const [isWishInProgress, setIsWishInProgress] = useState(false);
   // Inicializa el estado con el valor de localStorage o con 0 si no existe
   const [clickCount, setClickCount] = useState(() => {
     const savedCount = localStorage.getItem('clickCount');
@@ -26,12 +28,12 @@ function App() {
   });
 
   const handleWishClick = () => {
-    if (clickCount >= 1000) {
+    if (!isWishInProgress && clickCount >= 1000) {
       setClickCount(prevCount => prevCount - 1000);
       setIsWishing(true);
-    } else {
-      // This will trigger the "Not enough runes" modal in MainSection
-      setIsWishing(false);
+      setIsWishInProgress(true);
+    } else if (!isWishInProgress && clickCount < 1000) {
+      setIsWishing('not-enough-runes');
     }
   };
 
@@ -90,6 +92,8 @@ function App() {
         isWishing={isWishing}
         setIsWishing={setIsWishing}
         onWishClick={handleWishClick}
+        setIsWishInProgress={setIsWishInProgress}
+        showNotEnoughRunesModal={clickCount < 1000 && isWishing === false}
         >
       </MainSection>  
       <FooterComponent 
@@ -98,6 +102,7 @@ function App() {
         onShopClick={toggleShopModal}
         onInvClick={toggleInvModal}
         onWishClick={handleWishClick}
+        isWishInProgress={isWishInProgress}
         >
       </FooterComponent>
       <OptsModal isOpen={isModalOpen} onClose={toggleModal} onReset={handleReset} />

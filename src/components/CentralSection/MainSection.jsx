@@ -160,7 +160,7 @@ const NotEnoughModalBtn = styled.button`
 
 // CONST JSX
 
-const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, setIsWishing, clickCount, onWishClick }) => {
+const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, setIsWishing, clickCount, setIsWishInProgress  }) => {
   const [showModal, setShowModal] = useState(false);
   const [particles, setParticles] = useState([]);
   const [showNotEnoughRunesModal, setShowNotEnoughRunesModal] = useState(false);
@@ -173,15 +173,19 @@ const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, 
   //---
 
   useEffect(() => {
-    if (isWishing) {
+    if (isWishing === true) {
       const video = document.getElementById('wishVideo');
       video.play();
       video.onended = () => {
         setShowModal(true);
         setIsWishing(false);
+        setIsWishInProgress(false); // Add this line
       };
+    } else if (isWishing === 'not-enough-runes') {
+      setShowNotEnoughRunesModal(true);
+      setIsWishing(false);
     }
-  }, [isWishing, setIsWishing]);
+  }, [isWishing, setIsWishing, setIsWishInProgress]);
 
   const closeModal = () => {
     setShowModal(false);
@@ -231,7 +235,7 @@ const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, 
           ))}
         </FallingParticles>
         <DisplayContent>
-          {isWishing && (
+          {isWishing === true && (
             <VideoContainer>
               <StyledVideo id="wishVideo" src={radagonWebm} />
             </VideoContainer>

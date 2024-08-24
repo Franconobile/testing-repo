@@ -69,7 +69,7 @@ const MultiplierButtons = styled.div`
   gap: 10px;
 `;
 
-const FooterComponent = ({onClick, onOptionsClick, onShopClick, onInvClick, onWishClick }) => {
+const FooterComponent = ({onClick, onOptionsClick, onShopClick, onInvClick, onWishClick, isWishInProgress }) => {
 
   return (
     <Footer>
@@ -83,7 +83,7 @@ const FooterComponent = ({onClick, onOptionsClick, onShopClick, onInvClick, onWi
           onClick={onClick}
         />
         <MultiplierButtons>
-          <WishButton onClick={onWishClick}>Wish</WishButton>
+          <WishButton onClick={onWishClick} disabled={isWishInProgress}>Wish</WishButton>
         </MultiplierButtons>
       </Clicker>
     </Footer>
