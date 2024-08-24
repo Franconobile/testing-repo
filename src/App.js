@@ -99,16 +99,17 @@ function App() {
     localStorage.setItem('inventory', JSON.stringify(inventory));
   }, [inventory]);
 
+
+  
   const addToInventory = (character) => {
     setInventory(prevInventory => {
       const newInventory = { ...prevInventory };
       if (character.id in newInventory) {
         newInventory[character.id].count += 1;
-        console.log(`Incrementing count for ${character.name}. New count:`, newInventory[character.id].count);
       } else {
-        newInventory[character.id] = { ...character, count: 1 };
-        console.log(`Adding new character ${character.name} to inventory.`);
+        newInventory[character.id] = { ...character, count: 0 };
       }
+      console.log(`Count for ${character.name}: ${newInventory[character.id].count}`);
       return newInventory;
     });
   };

@@ -16,53 +16,60 @@ const Modal = styled.div`
   z-index: 20;
 `;
 
-const ModalContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const ChrContent = styled.div`
-  width: 300px;
-  height: 300px;
-  border: 1px solid #bbbbbb;
-  margin: 10px;
+const ChrTitle = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 30px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Mantinia', sans-serif;
+  flex-direction: column;
+  padding: 0px;
+  p {
+    position: absolute;
+    top: 40px;
+    font-size: 15px;
+    font-style: italic;
+  }
 `;
 
-const CharacterImage = styled.img`
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
+
+const ChrStars = styled.div`
+position: absolute;
+bottom: 40px;
 `;
+
+
+
+const ChrImg = styled.img`
+width: 100%;
+height: 100%;
+object-fit: cover;
+`;
+
 
 const ModalButton = styled.button`
+  position: absolute;
+  bottom: 10px;
   background-color: #7F5915;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
-  width: 50%;
 `;
 
 
 const Details = ({onClose, character}) => {
     return (
       <Modal>
-        <ModalContent>
-            <ChrContent>
-                <img src={character.image} alt={character.name} />
-                <h2>{character.name}</h2>
-                <p>Rarity: {character.rarity} ★</p>
-                <p>{character.desc}</p>
-            </ChrContent>
-            <ModalButton onClick={onClose}>Omg great!</ModalButton>
-        </ModalContent>
+        <ChrTitle>
+         <h2>{character.name}</h2>
+         <p>{character.desc}</p>
+        </ChrTitle>
+        <ChrStars>
+          <p>{character.rarity} ★</p>
+        </ChrStars>
+        <ModalButton onClick={onClose}>Omg</ModalButton>
+        <ChrImg src={character.image} alt={character.name} />
       </Modal>
     );
 };
