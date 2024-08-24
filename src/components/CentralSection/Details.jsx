@@ -57,8 +57,11 @@ const ModalButton = styled.button`
   cursor: pointer;
 `;
 
+// ANIMS
+
 
 const Details = ({onClose, character}) => {
+
     return (
       <Modal>
         <ChrTitle>
