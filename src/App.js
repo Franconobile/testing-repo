@@ -73,7 +73,6 @@ function App() {
   const handleReset = () => {
     setClickCount(0);
     localStorage.removeItem('clickCount');
-    localStorage.removeItem('inventory');
     setModalOpen(false);
   };
 
@@ -106,6 +105,9 @@ function App() {
       if (character.id in newInventory) {
         newInventory[character.id].count += 1;
         console.log(`Incrementing count for ${character.name}. New count:`, newInventory[character.id].count);
+      } else {
+        newInventory[character.id] = { ...character, count: 1 };
+        console.log(`Adding new character ${character.name} to inventory.`);
       }
       return newInventory;
     });
