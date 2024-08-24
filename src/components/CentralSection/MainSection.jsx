@@ -61,7 +61,7 @@ const DisplayContent = styled.div`
 `;
 
 
-const MainSection = ({  clickCount, setClickCount, workersCount  }) => {
+const MainSection = ({  clickCount, setClickCount, workersCount, newWorkerBought   }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setClickCount(prevCount => prevCount + workersCount);
@@ -79,7 +79,7 @@ const MainSection = ({  clickCount, setClickCount, workersCount  }) => {
             <p>Aquí irá el fondo</p>
           </DisplayContent>
         </DisplayArea>
-        <Workers workersCount={workersCount}/>
+        <Workers workersCount={workersCount} newWorkerBought={newWorkerBought}/>
       </Main>
     );
   };

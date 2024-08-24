@@ -1,5 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import styled, { keyframes } from 'styled-components';
+import animworker1 from '../../assets/stuff/anim_sprite1.gif';
+
 
 const Laburantes = styled.section`
   width: 200px;
@@ -24,11 +26,16 @@ const LaburantesList = styled.div`
 
 
 const LaburantesSlot = styled.div`
+  position: relative;
+  overflow: hidden;
   width: 50px;
   height: 50px;
   margin: 5px;
-  background-color: black;
+  background-color: #0F0C08;
   border-radius: 5px;
+  background-image: url(${animworker1});
+  background-size: cover;
+  background-position: center;
 `;
 
 const WarningText = styled.p`
@@ -37,9 +44,44 @@ const WarningText = styled.p`
 `;
 
 
-const Workers = ({ workersCount }) => {
+// Anim texto de farmeo
+
+const floatUpAndFade = keyframes`
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+`;
+
+const AnimatedText = styled.div`
+  position: absolute;
+  color: #7F6632;
+  font-size: 14px;
+  animation: ${floatUpAndFade} 1s ease-out forwards;
+`;
+
+
+const Workers = ({ workersCount, newWorkerBought  }) => {
+  const [animations, setAnimations] = useState([]);
   const displayedWorkers = Math.min(workersCount, 6);
   const totalWorkers = Math.min(workersCount, 25);
+
+  useEffect(() => {
+    if (newWorkerBought) {
+      const newAnimation = {
+        id: Date.now(),
+        index: workersCount - 1 // Index of the last bought worker
+      };
+      setAnimations(prev => [...prev, newAnimation]);
+      setTimeout(() => {
+        setAnimations(prev => prev.filter(anim => anim.id !== newAnimation.id));
+      }, 1000);
+    }
+  }, [newWorkerBought, workersCount]);
 
     return (
         <Laburantes>
@@ -48,9 +90,12 @@ const Workers = ({ workersCount }) => {
           </LaburantesHeader>
             <LaburantesList>
             {Array.from({ length: displayedWorkers }).map((_, index) => (
-                  <LaburantesSlot key={index} 
-                />
-            ))}
+          <LaburantesSlot key={index}>
+          {animations.find(anim => anim.index % 6 === index) && (
+            <AnimatedText key={animations.find(anim => anim.index % 6 === index).id}>+1</AnimatedText>
+          )}
+        </LaburantesSlot>
+        ))}
             {workersCount >= 6 && (
                 <WarningText>
                     x{totalWorkers}

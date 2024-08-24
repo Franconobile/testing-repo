@@ -137,8 +137,7 @@ const ClosePopupButtonWorker = styled.button`
   cursor: pointer;
   margin-left: 10px;
 
-      &:hover {
-    color: #7F5915;
+  
 `;
 
 const ShopModal = ({ isOpen, onClose, clickCount, setClickCount, workersCount, setWorkersCount }) => {
