@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback  } from 'react';
 import styled from 'styled-components';
 import Workers from './Workers';
+import Details from './Details';
 import limgravebg from '../../assets/bgs/ER-Limgrave.webp';
 import radagonWebm from '../../assets/player/radagon.webm'; 
 
@@ -50,7 +51,7 @@ const BackgroundImage = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); // Adjust the opacity as needed
+    background-color: rgba(0, 0, 0, 0.4);
   }
 `;
 
@@ -105,6 +106,7 @@ const VideoContainer = styled.div`
   top: 0;
   left: 0;
   z-index: 10;
+  
 `;
 
 const StyledVideo = styled.video`
@@ -247,10 +249,7 @@ const MainSection = ({ setClickCount, workersCount, newWorkerBought, isWishing, 
             </NotEnoughModal>
           )}
           {showModal && (
-            <Modal>
-              <p>Here's the character you pulled</p>
-              <ModalButton onClick={closeModal}>Great!</ModalButton>
-            </Modal>
+            <Details />
           )}
         </DisplayContent>
         </DisplayArea>

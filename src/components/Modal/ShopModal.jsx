@@ -136,7 +136,6 @@ const ClosePopupButtonWorker = styled.button`
   font-size: 15px;
   cursor: pointer;
   margin-left: 10px;
-
   
 `;
 
