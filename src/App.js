@@ -90,6 +90,21 @@ function App() {
 
   //Modal Inv
 
+  const [inventory, setInventory] = useState([]);
+
+  const addToInventory = (character) => {
+    setInventory(prevInventory => {
+      const existingItem = prevInventory.find(item => item.id === character.id);
+      if (existingItem) {
+        return prevInventory.map(item => 
+          item.id === character.id ? {...item, count: item.count + 1} : item
+        );
+      } else {
+        return [...prevInventory, {...character, count: 1}];
+      }
+    });
+  };
+
   const toggleInvModal = () => {
     setInvModalOpen(!isInvModalOpen);
   };
@@ -108,6 +123,7 @@ function App() {
         setIsWishInProgress={setIsWishInProgress}
         showNotEnoughRunesModal={clickCount < 1000 && isWishing === false}
         setPullHistory={setPullHistory}
+        addToInventory={addToInventory}
         >
       </MainSection>  
       <FooterComponent 
@@ -131,6 +147,7 @@ function App() {
       <Inventory
       isOpen={isInvModalOpen}
       onClose={toggleInvModal}
+      inventory={inventory}
       />
     </AppContainer>
 

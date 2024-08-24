@@ -56,10 +56,10 @@ const Details = ({onClose, character}) => {
       <Modal>
         <ModalContent>
             <ChrContent>
+                <img src={character.image} alt={character.name} />
                 <h2>{character.name}</h2>
                 <p>Rarity: {character.rarity} ★</p>
-                <CharacterImage src={character.image} alt={character.name}
-                 />
+                <p>{character.desc}</p>
             </ChrContent>
             <ModalButton onClick={onClose}>Omg great!</ModalButton>
         </ModalContent>

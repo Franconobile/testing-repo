@@ -4,7 +4,7 @@
       "name": "Black Knight",
       "type": "character",
       "rarity": 3,
-      "image": "assets/chrs/black-knight.webp",
+      "image": "/chrs/black-knight.webp",
       "desc": "Description 1"
     },
     {
@@ -12,7 +12,7 @@
         "name": "Curseblade",
         "type": "character",
         "rarity": 4,
-        "image": "../chrs/curseblade.webp",
+        "image": "/chrs/curseblade.webp",
         "desc": "Description 2"
       },
       {
@@ -20,7 +20,7 @@
         "name": "Margit",
         "type": "character",
         "rarity": 4,
-        "image": "../chrs/margit.webp",
+        "image": "/chrs/margit.webp",
         "desc": "Description 3"
       },
       {
@@ -28,7 +28,7 @@
         "name": "Melina",
         "type": "character",
         "rarity": 5,
-        "image": "../chrs/melina.webp",
+        "image": "/chrs/melina.webp",
         "desc": "Description 4"
       },
       {
@@ -36,7 +36,7 @@
         "name": "Malenia",
         "type": "character",
         "rarity": 5,
-        "image": "../chrs/malenia.webp",
+        "image": "/chrs/malenia.webp",
         "desc": "Description 5"
       }
   ]
