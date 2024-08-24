@@ -18,12 +18,22 @@ const AppContainer = styled.div`
 `;
 
 function App() {
+  const [isWishing, setIsWishing] = useState(false);
   // Inicializa el estado con el valor de localStorage o con 0 si no existe
   const [clickCount, setClickCount] = useState(() => {
     const savedCount = localStorage.getItem('clickCount');
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
 
+  const handleWishClick = () => {
+    if (clickCount >= 1000) {
+      setClickCount(prevCount => prevCount - 1000);
+      setIsWishing(true);
+    } else {
+      // This will trigger the "Not enough runes" modal in MainSection
+      setIsWishing(false);
+    }
+  };
 
   //Manejo de los modals.
 
@@ -76,13 +86,18 @@ function App() {
       <MainSection 
         clickCount={clickCount} 
         setClickCount={setClickCount} 
-        workersCount={workersCount}>
+        workersCount={workersCount}
+        isWishing={isWishing}
+        setIsWishing={setIsWishing}
+        onWishClick={handleWishClick}
+        >
       </MainSection>  
       <FooterComponent 
         onClick={handleClick} 
         onOptionsClick={toggleModal} 
         onShopClick={toggleShopModal}
         onInvClick={toggleInvModal}
+        onWishClick={handleWishClick}
         >
       </FooterComponent>
       <OptsModal isOpen={isModalOpen} onClose={toggleModal} onReset={handleReset} />
