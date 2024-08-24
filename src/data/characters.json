@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "name": "Black Knight",
+      "type": "character",
+      "rarity": 3,
+      "image": "../chrs/black-knight.webp"
+    },
+    {
+        "id": 2,
+        "name": "Curseblade",
+        "type": "character",
+        "rarity": 4,
+        "image": "../chrs/curseblade.webp"
+      },
+      {
+        "id": 3,
+        "name": "Margit",
+        "type": "character",
+        "rarity": 4,
+        "image": "../chrs/margit.webp"
+      },
+      {
+        "id": 4,
+        "name": "Melina",
+        "type": "character",
+        "rarity": 5,
+        "image": "../chrs/melina.webp"
+      },
+      {
+        "id": 5,
+        "name": "Malenia",
+        "type": "character",
+        "rarity": 5,
+        "image": "../chrs/malenia.webp"
+      }
+  ]

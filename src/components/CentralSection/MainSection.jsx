@@ -137,9 +137,8 @@ const MainSection = ({ setClickCount, workersCount, newWorkerBought }) => {
             />
           ))}
         </FallingParticles>
-
           <DisplayContent>
-
+            <p>Webm displayed here when clicking on Wish</p>
           </DisplayContent>
         </DisplayArea>
         <Workers workersCount={workersCount} newWorkerBought={newWorkerBought}/>

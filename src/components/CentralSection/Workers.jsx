@@ -7,7 +7,7 @@ const Laburantes = styled.section`
   width: 200px;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(40,37,32,1) 100%);
-  color: #fff;
+  color: #7C7358;
   h2 {
     margin-top: 0;
   }
