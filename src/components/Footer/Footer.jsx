@@ -31,6 +31,32 @@ const Button = styled.button`
   
 `;
 
+const WishButton = styled.button`
+  margin: 10px auto;
+  font-family: 'Mantinia';
+  width: 150px;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #C7B59E;
+  font-size: 18px;
+  font-weight: 400;
+  text-shadow: 0 1px 3px #000;
+  text-align: center;
+  padding: 10px 0;
+  background: radial-gradient(circle, #3E2708, #3E2708);
+  border-top: 4px ridge #655136;
+  border-left: 4px groove #655136;
+  border-right: 4px ridge #655136;
+  border-bottom: 4px groove #655136;
+  cursor: pointer;
+
+  &:hover {
+     background: radial-gradient(circle, #784B0E, #784B0E);
+  }
+  
+`;
+
+
 const Clicker = styled.section`
   display: flex;
   flex-direction: row;
@@ -57,8 +83,7 @@ const FooterComponent = ({onClick, onOptionsClick, onShopClick, onInvClick }) =>
           onClick={onClick}
         />
         <MultiplierButtons>
-          <Button>Wish x1</Button>
-          <Button>Wish x10</Button>
+          <WishButton>Wish</WishButton>
         </MultiplierButtons>
       </Clicker>
     </Footer>
