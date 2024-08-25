@@ -25,7 +25,7 @@
       },
       {
         "id": 4,
-        "name": "Curseblade",
+        "name": "Curseblade Labirith",
         "type": "character",
         "rarity": 4,
         "image": "/chrs/curseblade.webp",
@@ -654,5 +654,173 @@
         "rarity": 5,
         "image": "/chrs/millicent.webp",
         "desc": "If I am to flower into something other than myself, I would rather rot into nothingness as I am."
+      },
+      {
+        "id": 83,
+        "name": "Latenna",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/latenna.webp",
+        "desc": "Bow build wife"
+      },
+      {
+        "id": 84,
+        "name": "Patches",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/patches.webp",
+        "desc": "Hey... I heard there is a treasure over there."
+      },
+      {
+        "id": 85,
+        "name": "Hyetta",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/hyettab.webp",
+        "desc": "Yes, Hyetta... those were grapes"
+      },
+      {
+        "id": 86,
+        "name": "Goldmask",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/goldmask.webp",
+        "desc": "..."
+      },
+      {
+        "id": 87,
+        "name": "Needle Knight Leda",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/leda.webp",
+        "desc": "You can't fix her"
+      },
+      {
+        "id": 88,
+        "name": "Sir Ansbach",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/ansbach.webp",
+        "desc": "Righteous Tarnished. Become our new lord. A lord not for gods, but for men."
+      },
+      {
+        "id": 89,
+        "name": "Thiollier",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/thiollier.webp",
+        "desc": "I'm weak as a kitten and thick as two planks."
+      },
+      {
+        "id": 90,
+        "name": "St. Trina",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/trina.webp",
+        "desc": "You must kill Miquella... Grant him forgiveness."
+      },
+      {
+        "id": 91,
+        "name": "Miquella the Kind",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/miquella.webp",
+        "desc": "Lord brother. I'm going to be a god."
+      },
+      {
+        "id": 92,
+        "name": "Divine Beast Dancing Lion",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/dancing-lion.webp",
+        "desc": "Happy Chinese New Year"
+      },
+      {
+        "id": 93,
+        "name": "Rellana, Twin Moon Knight",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/rellana.webp",
+        "desc": "WHY IS SHE MUTE?"
+      },
+      {
+        "id": 94,
+        "name": "Messmer the Impaler",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/messmer.webp",
+        "desc": "Yet...my purpose standeth unchanged."
+      },
+      {
+        "id": 95,
+        "name": "Bayle the Dread",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/bayle.webp",
+        "desc": "CURSE YOU BAYLEEEEEEEEEEE!"
+      },
+      {
+        "id": 96,
+        "name": "Midra, Lord of Frenzied Flame",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/midra.webp",
+        "desc": "The depths of your FOOLISHNESS"
+      },
+      {
+        "id": 97,
+        "name": "Romina, Saint of the Bud",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/romina.webp",
+        "desc": "Why no cutscene for this perfect lady?"
+      },
+      {
+        "id": 98,
+        "name": "Romina, Saint of the Bud",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/romina.webp",
+        "desc": "Why no cutscene for this perfect lady?"
+      },
+      {
+        "id": 99,
+        "name": "Radahn, Consort of Miquella",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/promisedconsort.webp",
+        "desc": "Flashing, lights... Seizures..."
+      },
+      {
+        "id": 100,
+        "name": "Black Knife Assassin",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/blackknife.webp",
+        "desc": "I would let myself be stabbed"
+      },
+      {
+        "id": 101,
+        "name": "Soldier of God, Rick",
+        "type": "character",
+        "rarity": 10,
+        "image": "/chrs/soldierofgodrick.webp",
+        "desc": "The very same one..."
+      },
+      {
+        "id": 102,
+        "name": "Queen Marika the Eternal",
+        "type": "character",
+        "rarity": 10,
+        "image": "/chrs/marika.webp",
+        "desc": "The Erdtree governs all"
+      },
+      {
+        "id": 103,
+        "name": "Ranni, the Witch",
+        "type": "character",
+        "rarity": 10,
+        "image": "/chrs/ranni.webp",
+        "desc": "My dear consort, eternal."
       }
   ]
