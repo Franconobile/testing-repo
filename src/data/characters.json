@@ -5,38 +5,654 @@
       "type": "character",
       "rarity": 3,
       "image": "/chrs/black-knight.webp",
-      "desc": "Description 1"
+      "desc": "Am I even a Dark Souls Black Knight?"
     },
     {
         "id": 2,
+        "name": "BigMouth Imp",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/big-mouth.webp",
+        "desc": "POG! POGGERS!"
+      },
+      {
+        "id": 3,
+        "name": "Jar Innard",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/jar-innards.webp",
+        "desc": "I just... I can't... I'm sorry, Marika."
+      },
+      {
+        "id": 4,
         "name": "Curseblade",
         "type": "character",
         "rarity": 4,
         "image": "/chrs/curseblade.webp",
-        "desc": "Description 2"
+        "desc": "Your Granny."
       },
       {
-        "id": 3,
-        "name": "Margit",
+        "id": 5,
+        "name": "Golem Smith",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/golem-smith.webp",
+        "desc": "Big stone boy just want to pat slimes :3"
+      },
+      {
+        "id": 6,
+        "name": "Gravebird",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/gravebird.webp",
+        "desc": "Fuck this wacky birb"
+      },
+      {
+        "id": 7,
+        "name": "Shadowpot",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/shadowpot.webp",
+        "desc": "Free pots ***"
+      },
+      {
+        "id": 8,
+        "name": "Shadow undead",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/shadow-undead.webp",
+        "desc": "-What should we have them drop? _Yes"
+      },
+      {
+        "id": 9,
+        "name": "Scorpion",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/scorpion.webp",
+        "desc": "Sorry if you're arachnophobic..."
+      },
+      {
+        "id": 10,
+        "name": "Man Fly",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/man-fly.webp",
+        "desc": "Hello flies from Ringed City"
+      },
+      {
+        "id": 11,
+        "name": "Horned Warrior",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/horned-warrior.webp",
+        "desc": "Drink scorpion soup and you will be a strong boy!"
+      },
+      {
+        "id": 12,
+        "name": "Fire Knight",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/fire-knight.webp",
+        "desc": "Homing fire spam Homing fire spam Homing fire spam"
+      },
+      {
+        "id": 13,
+        "name": "Aging Untouchable",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/untouchable.webp",
+        "desc": "Bloodborne at home..."
+      },
+      {
+        "id": 14,
+        "name": "Bloodfiend",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/bloodfiend.webp",
+        "desc": "They're wandering in a pack, because they can't fight alone pff"
+      },
+      {
+        "id": 15,
+        "name": "Hippopotamus",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/hippopotamus.webp",
+        "desc": "Free Scadus!"
+      },
+      {
+        "id": 16,
+        "name": "Blue Worm",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/blue-worm.webp",
+        "desc": "We have cute tiny legs."
+      },
+      {
+        "id": 17,
+        "name": "Living Magma",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/living-mamga.webp",
+        "desc": "Pet me, I dare you"
+      },
+      {
+        "id": 18,
+        "name": "Candle Inquisitor",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/candleinquisitor.webp",
+        "desc": "We don't pay electricity bills."
+      },
+      {
+        "id": 19,
+        "name": "Divine Bird Warrior",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/bird-warrior.webp",
+        "desc": "'Cause I'm as free as a biiiird noooow"
+      },
+      {
+        "id": 20,
+        "name": "Messmer Soldier",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/messmersoldier.webp",
+        "desc": "Messmer simp"
+      },
+      {
+        "id": 21,
+        "name": "Shadow Militiamen",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/shadow-militiamen.webp",
+        "desc": "They have cute glowing eyes!"
+      },
+      {
+        "id": 22,
+        "name": "Furnace Golem",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/furnacegolem.webp",
+        "desc": "If I read another berserk ref, I swear i'm gonna..."
+      },
+      {
+        "id": 23,
+        "name": "Catacombs Sorcerer",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/putrescence-sorcerer.webp",
+        "desc": "Let us play Pong"
+      },
+      {
+        "id": 24,
+        "name": "Skeleton",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/skeleton.webp",
+        "desc": "Spooky scary skeletons"
+      },
+      {
+        "id": 25,
+        "name": "Fat Inquisitor",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/fat-inquisitor.webp",
+        "desc": "Big Chungus"
+      },
+      {
+        "id": 26,
+        "name": "Giant Bat",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/giantbat.webp",
+        "desc": "Chacarrón, chacarrón, Nini nini ron"
+      },
+      {
+        "id": 27,
+        "name": "Warhawk",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/warhawk.webp",
+        "desc": "WE'RE ALL LIVING IN AMERIKA, AMERIKA IST WUNDERBAR"
+      },
+      {
+        "id": 28,
+        "name": "Boar",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/boar.webp",
+        "desc": "Tocino"
+      },
+      {
+        "id": 29,
+        "name": "Deer",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/deer.webp",
+        "desc": "der"
+      },
+      {
+        "id": 30,
+        "name": "Crab",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/crab.webp",
+        "desc": "TIME FOR CRAB"
+      },
+      {
+        "id": 31,
+        "name": "Dog",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/dog.webp",
+        "desc": "Why the fuck is it a poodle?"
+      },
+      {
+        "id": 32,
+        "name": "Giant Dragonfly",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/dragonfly.webp",
+        "desc": "Locking camera worst enemy"
+      },
+      {
+        "id": 33,
+        "name": "Putrid Corpse",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/corpse.webp",
+        "desc": "Imagine dying for these?"
+      },
+      {
+        "id": 34,
+        "name": "Guillemot",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/guillemot.webp",
+        "desc": "The true Elden Lord"
+      },
+      {
+        "id": 35,
+        "name": "Owl",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/owl.webp",
+        "desc": "O.O"
+      },
+      {
+        "id": 36,
+        "name": "Miranda Sprout",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/flower.webp",
+        "desc": "Smoke Weed everyday"
+      },
+      {
+        "id": 37,
+        "name": "Land Squirt",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/land-squirt.webp",
+        "desc": "What the fuck is this?"
+      },
+      {
+        "id": 38,
+        "name": "Rat",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/giantrat.webp",
+        "desc": "Me irl"
+      },
+      {
+        "id": 39,
+        "name": "Springhare",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/chinchilla.webp",
+        "desc": "Chinchilla!"
+      },
+      {
+        "id": 40,
+        "name": "Stray",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/stray.webp",
+        "desc": "I hate this game"
+      },
+      {
+        "id": 41,
+        "name": "Demi Human",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/demi-human.webp",
+        "desc": "Return to monke?"
+      },
+      {
+        "id": 42,
+        "name": "Golem",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/golem.webp",
+        "desc": "This is not my game... I must protect the villagers"
+      },
+      {
+        "id": 43,
+        "name": "Imp",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/imp.webp",
+        "desc": "HAHAHA HAHA..."
+      },
+      {
+        "id": 44,
+        "name": "Troll",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/trol.webp",
+        "desc": "...Mad?"
+      },
+      {
+        "id": 45,
+        "name": "Godrick Soldier",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/godrick-soldier.webp",
+        "desc": "I want YOU for grafting army"
+      },
+      {
+        "id": 46,
+        "name": "Living Jar",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/living-jar.webp",
+        "desc": "Flowerpots"
+      },
+      {
+        "id": 47,
+        "name": "Runebear",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/runebear.webp",
+        "desc": "I just want a bear hug"
+      },
+      {
+        "id": 48,
+        "name": "Banished Knight",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/banished-knight.webp",
+        "desc": "I need a purpose in my life"
+      },
+      {
+        "id": 49,
+        "name": "Lookout Stones",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/lookout.webp",
+        "desc": "Gotta Catch 'Em All"
+      },
+      {
+        "id": 50,
+        "name": "Omen",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/omen.webp",
+        "desc": "Nightmares... I can't stand them."
+      },
+      {
+        "id": 51,
+        "name": "Mausoleum Knight",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/mauseleoum-knight.webp",
+        "desc": "Where's Your Head At?♪"
+      },
+      {
+        "id": 52,
+        "name": "Oracle Envoy",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/oracle.webp",
+        "desc": "Doot"
+      },
+      {
+        "id": 53,
+        "name": "Albinaurics",
+        "type": "character",
+        "rarity": 3,
+        "image": "/chrs/albinauric.webp",
+        "desc": "Sex symbol"
+      },
+      {
+        "id": 54,
+        "name": "Margit, the Fell Omen",
         "type": "character",
         "rarity": 4,
         "image": "/chrs/margit.webp",
-        "desc": "Description 3"
+        "desc": "Foul tarnished, in search of the Elden Ring."
       },
       {
-        "id": 4,
+        "id": 55,
+        "name": "Godrick the Grafted",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/godrick.webp",
+        "desc": "Forefathers, one and all…"
+      },
+      {
+        "id": 56,
+        "name": "Red Wolf of Radagon",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/red-wolf-of-radagon.webp",
+        "desc": "I miss Sif :("
+      },
+      {
+        "id": 57,
+        "name": "Rennala, Queen of the Full Moon",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/rennala.webp",
+        "desc": "I'll soon birth thee anew, a sweeting fresh and pure..."
+      },
+      {
+        "id": 58,
+        "name": "Starscourge Radahn",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/radahn.webp",
+        "desc": "And then we'll jump out of the planet to land as a destructive meteorite."
+      },
+      {
+        "id": 59,
+        "name": "Rykard, Lord of Blasphemy",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/rykard.webp",
+        "desc": "TOGETHAAAAAAAAA"
+      },
+      {
+        "id": 60,
+        "name": "Godfrey",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/godfrey.webp",
+        "desc": "Yellow submarine"
+      },
+      {
+        "id": 61,
+        "name": "Morgott, The Omen King",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/morgott.webp",
+        "desc": "Graceless Tarnished..."
+      },
+      {
+        "id": 62,
+        "name": "Mohg, Lord of Blood",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/mohg.webp",
+        "desc": "Welcome, honored guest. To the birthplace of our dynasty!"
+      },
+      {
+        "id": 63,
+        "name": "Godfrey, First Elden Lord",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/godfreyeldenlord.webp",
+        "desc": "Thy strength befits a crown..."
+      },
+      {
+        "id": 64,
+        "name": "Hoarah Loux",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/hoarah-loux.webp",
+        "desc": "I've Given thee courtesy ENOUGH."
+      },
+      {
+        "id": 65,
+        "name": "Malenia, Blade of Miquella",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/malenia.webp",
+        "desc": "...And I have never known defeat"
+      },
+      {
+        "id": 66,
+        "name": "Maliketh, The Black Blade",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/maliketh.webp",
+        "desc": "Oh, Death. Become my blade, once more."
+      },
+      {
+        "id": 67,
+        "name": "Ancient Dragon Lansseax",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/lansseax.webp",
+        "desc": "WHY DO THEY ALL HAVE ALMOST THE SAME NAME?"
+      },
+      {
+        "id": 68,
+        "name": "Godskin Duo",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/godskins.webp",
+        "desc": "We don't know how to count, skin issue"
+      },
+      {
+        "id": 69,
+        "name": "Crucible Knight",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/crucibleknight.webp",
+        "desc": "Black Knight Remastered"
+      },
+      {
+        "id": 70,
+        "name": "Elden Beast",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/eldenbeast.webp",
+        "desc": "Hallucigenia"
+      },
+      {
+        "id": 71,
+        "name": "Radagon of the Golden Order",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/radagon.webp",
+        "desc": "Daddy"
+      },
+      {
+        "id": 72,
+        "name": "Radagon of the Golden Order",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/radagon.webp",
+        "desc": "Daddy"
+      },
+      {
+        "id": 73,
+        "name": "Sorceress Sellen",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/sellen.webp",
+        "desc": "Hear me Out"
+      },
+      {
+        "id": 74,
+        "name": "Roderika",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/roderika.webp",
+        "desc": "Thanks fromsoft for not killing her..."
+      },
+      {
+        "id": 75,
+        "name": "D, Hunter of the Dead",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/hunterd.webp",
+        "desc": "Vampire Hunter D: Bloodlust"
+      },
+      {
+        "id": 76,
         "name": "Melina",
         "type": "character",
         "rarity": 5,
         "image": "/chrs/melina.webp",
-        "desc": "Description 4"
+        "desc": "I offer you an accord."
       },
       {
-        "id": 5,
-        "name": "Malenia",
+        "id": 77,
+        "name": "Iron Fist Alexander",
         "type": "character",
         "rarity": 5,
-        "image": "/chrs/malenia.webp",
-        "desc": "Description 5"
+        "image": "/chrs/alexander.webp",
+        "desc": "The great Alexander lived as a warrior to his last!"
+      },
+      {
+        "id": 78,
+        "name": "White Mask Varré",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/varre.webp",
+        "desc": "No maidens?"
+      },
+      {
+        "id": 79,
+        "name": "Fia",
+        "type": "character",
+        "rarity": 4,
+        "image": "/chrs/fia.webp",
+        "desc": "...Would you allow me to hold you, but briefly?"
+      },
+      {
+        "id": 80,
+        "name": "Rya",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/rya.webp",
+        "desc": "Too pure for this rotten world..."
+      },
+      {
+        "id": 81,
+        "name": "Blaidd",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/blaidd.webp",
+        "desc": "If I read another berserk ref, I swear i'm gonna..."
+      },
+      {
+        "id": 82,
+        "name": "Millicent",
+        "type": "character",
+        "rarity": 5,
+        "image": "/chrs/millicent.webp",
+        "desc": "If I am to flower into something other than myself, I would rather rot into nothingness as I am."
       }
   ]
