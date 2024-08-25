@@ -38,9 +38,11 @@ const ChrTitle = styled.div`
   padding: 0px;
   animation: ${fadeIn} 0.5s ease-in forwards;
   animation-delay: 1.5s;
+  text-shadow: 2px 2px black;
   opacity: 0;
   p {
     position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
     top: 40px;
     font-size: 15px;
     font-style: italic;
@@ -91,7 +93,15 @@ const ModalButton = styled.button`
   animation: ${fadeIn} 0.5s ease-in forwards;
   animation-delay: 1.5s;
   opacity: 0;
+  border-top: 2px ridge #655136;
+  border-left: 2px groove #655136;
+  border-right: 2px ridge #655136;
+  border-bottom: 2px groove #655136;
   z-index: 30;
+
+    &:hover {
+     background: radial-gradient(circle, #784B0E, #784B0E);
+  }
 `;
 
 // ANIMS

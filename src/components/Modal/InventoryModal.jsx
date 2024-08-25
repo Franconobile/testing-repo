@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import characters from '../../data/characters.json';
+import starImage3 from '../../assets/3-star.png';
+import starImage4 from '../../assets/4-star.png';
+import starImage5 from '../../assets/5-star.png';
 
 
 const InvOverlay = styled.div`
@@ -84,10 +87,26 @@ const Button = styled.button`
 
 //CHRS slots
 
+const StarContainer = styled.div`
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+`;
+
+const StarImage = styled.img`
+  width: 15px;
+  height: 15px;
+  margin: 0 1px;
+`;
+
 const Slot = styled.div`
   width: 100px;
   height: 100px;
-  border: 1px solid #bbbbbb;
+  border: 1px solid #9E5A08;
+  border-style: double;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,13 +115,17 @@ const Slot = styled.div`
 
 const CharacterSlot = styled(Slot)`
   position: relative;
+  overflow: visible;
+    flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
 `;
 
 const CountBadge = styled.div`
   position: absolute;
   top: -10px;
   right: -10px;
-  background-color: red;
+  background-color: #A56C0A;
   color: white;
   border-radius: 50%;
   width: 20px;
@@ -115,17 +138,20 @@ const CountBadge = styled.div`
 
 const CharacterBadge = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
-  gap: 50px;
+  gap: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
 `;
 
 
 
 const CharacterImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 180%;
+  height: 180%;
+  object-fit: cover;
 `;
 
 
@@ -137,12 +163,37 @@ const PlaceholderText = styled.span`
   }
 `;
 
+const starImages = {
+  3: starImage3,
+  4: starImage4,
+  5: starImage5
+};
+
+const renderStars = (rarity) => {
+  const starCount = Math.min(Math.max(rarity, 3), 5); // Ensure rarity is between 3 and 5
+  const starImage = starImages[starCount];
+  return (
+    <StarContainer>
+      {[...Array(starCount)].map((_, index) => (
+        <StarImage key={index} src={starImage} alt={`${starCount} star`} />
+      ))}
+    </StarContainer>
+  );
+};
+
 const InventoryModal = ({isOpen, onClose, inventory }) => {
     const [activeTab, setActiveTab] = useState('Character');
 
     if (!isOpen) return null;
 
-    const characters = Object.values(inventory).filter(item => item.type === 'character');
+    const characters = Object.values(inventory)
+    .filter(item => item.type === 'character')
+    .sort((a, b) => {
+      if (b.rarity !== a.rarity) {
+        return b.rarity - a.rarity;
+      }
+      return a.name.localeCompare(b.name);
+    });
 
     return (
       <InvOverlay>
@@ -154,13 +205,14 @@ const InventoryModal = ({isOpen, onClose, inventory }) => {
             <Button onClick={() => setActiveTab('Weapons')}>Weapons</Button>
           </ButtonContainer>
           {activeTab === 'Character' && (
-            <CharacterBadge>
+              <CharacterBadge>
               {characters.map(character => (
                 <CharacterSlot key={character.id}>
                   <CharacterImage src={character.image} alt={character.name} />
                   {character.count > 1 && (
                     <CountBadge>x{character.count}</CountBadge>
                   )}
+                  {renderStars(character.rarity)}
                 </CharacterSlot>
               ))}
             </CharacterBadge>
@@ -168,7 +220,7 @@ const InventoryModal = ({isOpen, onClose, inventory }) => {
           {activeTab === 'Weapons' && (
             <Slot>
               <PlaceholderText>
-                Weapon<span>1</span>
+                Under construction lmao sorry
               </PlaceholderText>
             </Slot>
           )}
